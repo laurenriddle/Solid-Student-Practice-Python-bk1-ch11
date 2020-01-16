@@ -1,3 +1,16 @@
+'''
+Define a Python class named Student. This class will have 5 properties.
+
+First name (string)
+Last name (string)
+Age (integer)
+Cohort number (integer)
+Full name (read-only string)
+Define getters for all properties.
+Define a setter for all but the read only property.
+Ensure that only the appropriate value can be assigned to each.
+The full name property should return first name and last name separated by a space. It's value cannot be set.
+'''
 class Student():
     def __init__(self):
         self.first_name = ""
@@ -69,10 +82,18 @@ class Student():
         else:
             raise TypeError('D')
     def __str__(self):
-        return f"{self.full_name}"
+        return f"{self.full_name} is {self.age} years old and is in cohort {self.cohort_number}."
+        
 
 
+'''
+Use the __str__ and __repr__ magic methods on your class to specify what an object's string representation should be. It's just like the toString() method in JavaScript.
 
+
+Change your class so that any objects created from it will be rerpesented as strings in the following format.
+
+Mike Ellis is 35 years old and is in cohort 39
+'''
 
 mike = Student()
 mike.first_name = "Mike"
@@ -81,4 +102,3 @@ mike.age = 35
 mike.cohort_number = 39
 
 print(mike)
-print(f"{mike.full_name} is {mike.age} years old and is in cohort {mike.cohort_number}.")
