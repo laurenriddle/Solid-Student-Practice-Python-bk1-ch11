@@ -4,6 +4,7 @@ class Student():
         self.last_name = ""
         self.age = 0
         self.cohort_number = 0
+        
 
 # Define getters for all properties.
 
