@@ -4,7 +4,6 @@ class Student():
         self.last_name = ""
         self.age = 0
         self.cohort_number = 0
-        # self.full_name = ""
 
 
 
@@ -39,7 +38,7 @@ class Student():
     @property # The full name getter
     def full_name(self):
             try:
-                return self.__full_name # Note there are 2 underscores here
+                return self.__first_name + " " + self.__last_name
             except AttributeError:
                 return ""
 
@@ -69,8 +68,8 @@ class Student():
             self.__cohort_number = new_cohort_number
         else:
             raise TypeError('D')
-    # def __str__(self):
-    #     return f"{self.full_name}"
+    def __str__(self):
+        return f"{self.full_name}"
 
 
 
@@ -82,4 +81,4 @@ mike.age = 35
 mike.cohort_number = 39
 
 print(mike)
-print(f"{mike.first_name} {mike.last_name} is {mike.age} years old and is in cohort {mike.cohort_number}.")
+print(f"{mike.full_name} is {mike.age} years old and is in cohort {mike.cohort_number}.")
