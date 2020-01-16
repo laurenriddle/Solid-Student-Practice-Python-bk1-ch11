@@ -1,10 +1,9 @@
-class Student:
+class Student():
     def __init__(self):
         self.first_name = ""
         self.last_name = ""
-        self.age = int
-        self.cohort_number = int
-        self.full_name = f"{self.first_name} {self.last_name}"
+        self.age = 0
+        self.cohort_number = 0
 
 # Define getters for all properties.
 
@@ -48,22 +47,35 @@ class Student:
         if type(new_first_name) is str:
             self.__first_name = new_first_name
         else:
-            raise TypeError('Please provide a floating point value for the price')
+            raise TypeError('A')
     @last_name.setter # The first name  setter
     def last_name(self, new_last_name):
         if type(new_last_name) is str:
             self.__last_name = new_last_name
         else:
-            raise TypeError('Please provide a floating point value for the price')
+            raise TypeError('B')
     @age.setter # The age setter
     def age(self, new_age):
         if type(new_age) is int:
             self.__age = new_age
         else:
-            raise TypeError('Please provide a floating point value for the price')
+            raise TypeError('C')
     @cohort_number.setter # The age setter
     def cohort_number(self, new_cohort_number):
         if type(new_cohort_number) is int:
             self.__cohort_number = new_cohort_number
         else:
-            raise TypeError('Please provide a floating point value for the price')
+            raise TypeError('D')
+    def __str__(self):
+        return f"{self.full_name}"
+
+
+
+
+mike = Student()
+mike.first_name = "Mike"
+mike.last_name = "Esllis"
+mike.age = 35
+mike.cohort_number = 39
+
+print(mike)
