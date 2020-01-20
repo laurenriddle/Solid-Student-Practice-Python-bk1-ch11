@@ -12,28 +12,28 @@ Ensure that only the appropriate value can be assigned to each.
 The full name property should return first name and last name separated by a space. It's value cannot be set.
 '''
 class Student():
-    def __init__(self):
-        self.first_name = ""
-        self.last_name = ""
-        self.age = 0
-        self.cohort_number = 0
+    def __init__(self, first, last, age, cnumber):
+        self.__first_name = first
+        self.__last_name = last
+        self.__age = age
+        self.__cohort_number = cnumber
 
 
 
 # Define getters for all properties.
 
-    @property # The first name getter
-    def first_name(self):
-        try:
-            return self.__first_name # Note there are 2 underscores here
-        except AttributeError:
-            return ""
-    @property # The last name getter
-    def last_name(self):
-        try:
-            return self.__last_name # Note there are 2 underscores here
-        except AttributeError:
-            return ""
+    # @property # The first name getter
+    # def first_name(self):
+    #     try:
+    #         return self.__first_name # Note there are 2 underscores here
+    #     except AttributeError:
+    #         return ""
+    # @property # The last name getter
+    # def last_name(self):
+    #     try:
+    #         return self.__last_name # Note there are 2 underscores here
+    #     except AttributeError:
+    #         return ""
     @property # The age getter
     def age(self):
         try:
@@ -57,18 +57,18 @@ class Student():
 
 # Define a setter for all but the read only property. Ensure that only the appropriate value can be assigned to each.
 
-    @first_name.setter # The first name  setter
-    def first_name(self, new_first_name):
-        if type(new_first_name) is str:
-            self.__first_name = new_first_name
-        else:
-            raise TypeError('A')
-    @last_name.setter # The first name  setter
-    def last_name(self, new_last_name):
-        if type(new_last_name) is str:
-            self.__last_name = new_last_name
-        else:
-            raise TypeError('B')
+    # @first_name.setter # The first name  setter
+    # def first_name(self, new_first_name):
+    #     if type(new_first_name) is str:
+    #         self.__first_name = new_first_name
+    #     else:
+    #         raise TypeError('A')
+    # @last_name.setter # The first name  setter
+    # def last_name(self, new_last_name):
+    #     if type(new_last_name) is str:
+    #         self.__last_name = new_last_name
+    #     else:
+    #         raise TypeError('B')
     @age.setter # The age setter
     def age(self, new_age):
         if type(new_age) is int:
@@ -95,10 +95,10 @@ Change your class so that any objects created from it will be rerpesented as str
 Mike Ellis is 35 years old and is in cohort 39
 '''
 
-mike = Student()
-mike.first_name = "Mike"
-mike.last_name = "Esllis"
-mike.age = 35
-mike.cohort_number = 39
+mike = Student("Mike", "Esllis", 35, 39)
+# mike.first_name = "Mike"
+# mike.last_name = "Esllis"
+# mike.age = 35
+# mike.cohort_number = 39
 
 print(mike)
